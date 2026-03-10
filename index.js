@@ -14,6 +14,7 @@ const initialExpenses = [
 
 const expensesFromStorage = JSON.parse(localStorage.getItem("expenses"));
 const expenses = expensesFromStorage || initialExpenses;
+renderExpenses(expenses);
 function createExpensesEl(expense) {
   //Create elements
   const li = document.createElement("li");
@@ -62,4 +63,4 @@ function renderExpenses(expenses) {
     expenseList.append(expenseEl);
   });
 }
-renderExpenses(expenses);
+
