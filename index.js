@@ -1,5 +1,5 @@
 //Data store
-const expenses = [
+const initialExpenses = [
   {
     category: "Shopping",
     description: "Nintendo Switch!!",
@@ -12,6 +12,8 @@ const expenses = [
   },
 ];
 
+const expensesFromStorage = JSON.parse(localStorage.getItem("expenses"));
+const expenses = expensesFromStorage || initialExpenses;
 function createExpensesEl(expense) {
   //Create elements
   const li = document.createElement("li");
@@ -41,12 +43,17 @@ function createExpensesEl(expense) {
   //Add Event Listeners
   deleteLink.addEventListener("click", (event) => {
     event.preventDefault();
-    const index = expenses.indexOf(expense);
-    expenses.splice(index, 1);
+    deleteExpense(expense);
     renderExpenses(expenses);
   });
   return li;
 }
+function deleteExpense(expense) {
+  const index = expenses.indexOf(expense);
+  expenses.splice(index, 1);
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+}
+
 function renderExpenses(expenses) {
   const expenseList = document.querySelector(".js-expenses");
   expenseList.innerHTML = "";
