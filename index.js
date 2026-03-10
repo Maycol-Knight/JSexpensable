@@ -38,6 +38,13 @@ function createExpensesEl(expense) {
   actions.append(deleteLink);
   expenseDetail.append(container, amount);
   li.append(expenseDetail, actions);
+  //Add Event Listeners
+  deleteLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    const index = expenses.indexOf(expense);
+    expenses.splice(index, 1);
+    renderExpenses(expenses);
+  });
   return li;
 }
 function renderExpenses(expenses) {
