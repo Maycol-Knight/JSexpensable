@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Expenses</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container navbar js-navbar">
+        <h2>Expenses Tracker</h2>
+        <nav>
+          <ul class="navbar-links" role="list">
+            <li><a href="index.html">List Expenses</a></li>
+            <li><a href="new-expense.html">Add Expense</a></li>
+          </ul>
+        </nav>
+        <div class="navbar-icons js-navbar-menu">
+          <img src="./images/icons/menu.svg" class="navbar__menu-icon" />
+          <img src="./images/icons/close.svg" class="navbar__menu-icon-close" />
+        </div>
+      </div>
+    </header>
+    <main class="section">
+      <div class="container">
+        <ul class="expenses js-expenses"></ul>
+        <a href="new-expense.html" class="block text-center">Add new expense</a>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Maycol 2026</p>
+    </footer>
+    <script src="navbar.js"></script>
+    <script src="store.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
